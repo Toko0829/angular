@@ -1,0 +1,19 @@
+<!-- home.component.html -->
+<h1>Registration</h1>
+
+<div>
+  <input [(ngModel)]="newUsers.name" placeholder="Name">
+  <input [(ngModel)]="newUsers.email" placeholder="Email">
+  <input [(ngModel)]="newUsers.password" placeholder="Password">
+  <select [(ngModel)]="newUsers.role">
+    <option *ngFor="let x of roles">{{x}}</option>
+  </select>
+  <button (click)="addUser()">Submit</button>
+</div>
+
+<h1>Login</h1>
+<div>
+  <input type="text" [(ngModel)]="loginEmail" placeholder="Email">
+  <input type="password" [(ngModel)]="loginPassword" placeholder="Password">
+  <button (click)="login()">Submit</button>
+</div>
