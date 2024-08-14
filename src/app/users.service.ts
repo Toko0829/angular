@@ -8,6 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class UsersService {
 
+  private loggedName = ""
+
+  setLoggedName(name:string){
+    this.loggedName = name; 
+  }
+
+  getLoggedName():string{
+    return this.loggedName
+  }
+
   baseUrl = "http://localhost:3000"
 
   constructor(private http:HttpClient) { }

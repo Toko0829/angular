@@ -51,8 +51,11 @@ export class HomeComponent {
     const loginAcc = this.users.some(user => {
       return user.email === this.loginEmail && user.password === this.loginPassword;
     });
+
     
     if(loginAcc){
+      const loggedAcc = this.users.find(user => user.email === this.loginEmail)?.name
+      this.UsersService.setLoggedName(loggedAcc || "")
       alert(`შესვლა`)
       this.router.navigate(['/profile']);
     } else{
